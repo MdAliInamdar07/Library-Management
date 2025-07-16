@@ -15,7 +15,8 @@ public class LibraryManager extends Libraryaddbook{
             System.out.println("4. Display All Books");
             System.out.println("5. Borrow Book");
             System.out.println("6. Return Book");
-            System.out.println("7. Exit");
+            System.out.println("7. Check Book Status");
+            System.out.println("8. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
             sc.nextLine(); // clear newline
@@ -45,15 +46,24 @@ public class LibraryManager extends Libraryaddbook{
                     sb.UserIN(title , author);
                     break;
                 case 4:
-
+                    for(Map.Entry<Book, BookLocation>e : bookMap.entrySet()) {
+                        System.out.println(e.getKey());
+                        System.out.println(e.getValue());
+                    }
                     break;
                 case 5:
+                    System.out.print("To borrow a book \n Enter title: ");
+                    title = sc.nextLine();
+                    
 
                     break;
                 case 6:
 
                     break;
                 case 7:
+
+                    break;
+                case 8:
                     System.out.println("Exiting...");
                     System.exit(0);
                 default:
